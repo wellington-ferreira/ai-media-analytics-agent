@@ -1,5 +1,5 @@
 
-# Agente analista de mídia de IA (MVP)
+# 🤖 Agente analista de mídia de IA (MVP)
 
 🌎 Este arquivo README também está disponível em inglês: [README.md](./README.md)
 
@@ -286,7 +286,7 @@ Riscos:
 Oportunidades:
 ...
 
-![Exemplo de Resposta](./image.png)
+![Exemplo de Resposta](image.png)
 
 ```
 
