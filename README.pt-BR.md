@@ -128,28 +128,37 @@ Separação clara:
 app/
 │
 ├── agent/
-│   └── graph.py             # Orquestração (LangGraph)
-│
-├── core/
-│   └── llm.py               # Configuração do modelo
-│
-├── prompts/
-│   ├── analytic_prompt.py
-│   └── descriptive_prompt.py
-│
-├── tools/
-│   └── bigquery_tool.py     # Query no BigQuery
-│
-├── services/
-│   └── formatter.py         # Formatação dos dados
+│   ├── graph.py                # Orquestração do fluxo (LangGraph)
+│   ├── nodes.py                # Lógica das etapas do agente
+│   └── state.py                # Definição do estado do agente
 │
 ├── api/
-│   └── routes.py            # Endpoint /ask
+│   └── routes.py               # Endpoints da API (FastAPI)
+│
+├── config/
+│   └── settings.py             # Gestão de variáveis de ambiente e chaves
+│
+├── core/
+│   └── llm.py                  # Inicialização e config do modelo de linguagem
+│
+├── prompts/
+│   ├── analytic_prompt.py      # Prompts para análise de dados
+│   └── descriptive_prompt.py   # Prompts para respostas narrativas
 │
 ├── schemas/
-│   └── query_schema.py      # Pydantic
+│   └── query_schema.py         # Modelos de dados (Pydantic)
 │
-└── main.py                  # Entry point (FastAPI)
+├── services/
+│   ├── bq_service.py           # Conexão direta com Google BigQuery
+│   └── formatter.py            # Tratamento e limpeza de dados
+│
+├── tools/
+│   └── bigquery_tool.py        # Ferramenta para o agente usar o BigQuery
+│
+├── validators/
+│   └── validator.py            # Validações lógicas e de segurança
+│
+└── main.py                     # Ponto de entrada da aplicação
 
 ```
 

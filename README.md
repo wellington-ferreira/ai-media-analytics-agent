@@ -130,28 +130,37 @@ Clear separation:
 app/
 │
 ├── agent/
-│   └── graph.py             # Orquestração (LangGraph)
-│
-├── core/
-│   └── llm.py               # Configuração do modelo
-│
-├── prompts/
-│   ├── analytic_prompt.py
-│   └── descriptive_prompt.py
-│
-├── tools/
-│   └── bigquery_tool.py     # Query no BigQuery
-│
-├── services/
-│   └── formatter.py         # Formatação dos dados
+│   ├── graph.py             # Workflow orchestration (LangGraph)
+│   ├── nodes.py             # Agent step logic and decision making
+│   └── state.py             # Agent state definition
 │
 ├── api/
-│   └── routes.py            # Endpoint /ask
+│   └── routes.py            # API Endpoints (FastAPI)
+│
+├── config/
+│   └── settings.py          # Environment variables and API key management
+│
+├── core/
+│   └── llm.py               # Model initialization and configuration
+│
+├── prompts/
+│   ├── analytic_prompt.py   # Prompts for data analysis logic
+│   └── descriptive_prompt.py# Prompts for narrative response generation
 │
 ├── schemas/
-│   └── query_schema.py      # Pydantic
+│   └── query_schema.py      # Data models and validation (Pydantic)
 │
-└── main.py                  # Entry point (FastAPI)
+├── services/
+│   ├── bq_service.py        # Direct Google BigQuery connection service
+│   └── formatter.py         # Data cleaning and output formatting
+│
+├── tools/
+│   └── bigquery_tool.py     # Tool for the agent to execute BigQuery queries
+│
+├── validators/
+│   └── validator.py         # Logic and security validation layers
+│
+└── main.py                  # Application entry point
 
 ```
 
