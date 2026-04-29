@@ -1,4 +1,5 @@
 from langchain.chat_models import init_chat_model
+from app.config.settings import GROQ_API_KEY
 import os
 
 llm = init_chat_model(
